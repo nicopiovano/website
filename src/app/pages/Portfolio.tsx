@@ -16,20 +16,20 @@ export function Portfolio() {
             Proyectos
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl">
-            Una selección de proyectos que demuestran mi experiencia en desarrollo
-            web, con foco en productos que generan valor.
+            Una selección de proyectos que demuestran mi experiencia en
+            desarrollo web, con foco en productos que generan valor.
           </p>
         </div>
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="group overflow-hidden border-border hover:border-[var(--accent-blue)]/50 transition-all"
+            <Card
+              key={index}
+              className="group overflow-hidden border-border hover:border-[var(--accent-blue)]/50 transition-all flex flex-col h-full"
             >
               {/* Image */}
-              <div className="relative aspect-video overflow-hidden bg-muted">
+                            <div className="relative aspect-video overflow-hidden bg-muted shrink-0">
                 <ImageWithFallback
                   src={project.image}
                   alt={project.title}
@@ -39,7 +39,7 @@ export function Portfolio() {
               </div>
 
               {/* Content */}
-              <div className="p-6">
+              <div className="p-6 flex flex-col flex-1 min-h-0">
                 <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl" style={{ fontWeight: 600 }}>
                     {project.title}
@@ -54,7 +54,7 @@ export function Portfolio() {
                 </p>
 
                 {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-6">
+                <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, i) => (
                     <span
                       key={i}
@@ -65,8 +65,8 @@ export function Portfolio() {
                   ))}
                 </div>
 
-                {/* Links */}
-                <div className="flex gap-3">
+                {/* Links — siempre abajo de la card */}
+                <div className="flex gap-3 mt-auto pt-2">
                   {project.link && (
                     <Button
                       size="sm"
@@ -74,7 +74,11 @@ export function Portfolio() {
                       className="flex-1 border-border hover:bg-accent"
                       asChild
                     >
-                      <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Ver
                       </a>
