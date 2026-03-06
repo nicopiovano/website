@@ -101,6 +101,18 @@ export const PROJECTS = [
     github: "https://github.com/nicopiovano/porfolio-romina-fiorentino",
   },
   {
+    title: "Fulbapp",
+    serviceIndex: 2,
+    problem: "Siempre faltaban jugadores para completar el partido.",
+    solution:
+      "App para crear partidos con precio, lugar, fecha y cupos. Si alguien se baja, el reemplazante entra solo.",
+    impact: "Cero llamadas para completar el equipo. El partido se llena solo.",
+    image: "/projects/fulbapp.png",
+    technologies: ["React", "Tailwind", "Vite"],
+    link: "https://nicolas-piovano-fulbapp.vercel.app/",
+    github: "https://github.com/nicopiovano/fulbapp",
+  },
+  {
     title: "Porfolio Trilingüe con ChatBot",
     serviceIndex: 2,
     problem:
