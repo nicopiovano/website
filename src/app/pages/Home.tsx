@@ -46,7 +46,7 @@ export function Home() {
                 className="text-5xl md:text-7xl mb-6"
                 style={{ fontWeight: 700, lineHeight: 1.1 }}
               >
-                Hola, soy{" "}
+                {/* Hola, soy{" "} */}
                 <span className="bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)] bg-clip-text text-transparent">
                   {SITE.name}
                 </span>
