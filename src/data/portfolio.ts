@@ -59,18 +59,17 @@ export const SERVICES = {
         "Tableros para ingresos/gastos, métricas y reportes para tomar decisiones con números claros.",
     },
     {
-      title: "Tu vidriera online",
-      description:
-        "Diseñada para que el que entra, compre, reserve o te contacte.",
-    },
-    {
       title: "Tu web en piloto automático",
       description: "Turnos, pagos, consultas y notificaciones en automático.",
+    },
+    {
+      title: "Aplicaciones móviles",
+      description: "Desarrollo de aplicaciones móviles para iOS y Android.",
     },
   ],
 } as const;
 
-/** Índice en SERVICES.items: 0 Paneles, 1 Tiendas online, 2 Sitios web personales, 3 Control finanzas, 4 Vidriera online, 5 Piloto automático */
+/** Índice en SERVICES.items: 0 Paneles, 1 Tiendas online, 2 Sitios web personales, 3 Control finanzas, 4 Piloto automático, 5 Aplicaciones móviles */
 export const PROJECTS = [
   {
     title: "Ecommerce de Rifas",
@@ -102,7 +101,7 @@ export const PROJECTS = [
   },
   {
     title: "Fulbapp",
-    serviceIndex: 2,
+    serviceIndex: 5,
     problem: "Siempre faltaban jugadores para completar el partido.",
     solution:
       "App para crear partidos con precio, lugar, fecha y cupos. Si alguien se baja, el reemplazante entra solo.",
@@ -153,6 +152,20 @@ export const PROJECTS = [
     technologies: ["Vue", "Vite", "Tailwind CSS"],
     link: "https://nicolas-piovano-finanzas-app.vercel.app",
     github: "https://github.com/nicopiovano/finanzas-app",
+  },
+  {
+    title: "Porfolio Actualizado",
+    serviceIndex: 2,
+    problem:
+      "Un portfolio básico y monolingüe limita alcance, credibilidad y generación de leads internacionales.",
+    solution:
+      "Sitio multiidioma con rutas por idioma, contenido optimizado para SEO y chat con IA integrado para atención y calificación de visitantes.",
+    impact:
+      "Marca profesional sólida, mayor captación de leads en distintos mercados y mejor conversión con clientes que operan en USD.",
+    image: "/projects/website.png",
+    technologies: ["Vue", "Vite", "Tailwind CSS"],
+    link: "https://nicol-piovano-porfolio.vercel.app",
+    github: "https://github.com/nicopiovano/porfolio",
   },
 ] as const;
 
