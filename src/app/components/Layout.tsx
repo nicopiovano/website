@@ -3,7 +3,7 @@ import { Navigation } from "./Navigation";
 
 export function Layout() {
   return (
-    <div className="dark min-h-screen flex flex-col">
+    <div className="dark min-h-screen flex flex-col bg-[url('/backgrounds/background-2.png')] bg-cover bg-center bg-no-repeat bg-fixed">
       <Navigation />
       <main className="flex-1">
         <Outlet />
