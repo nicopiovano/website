@@ -14,13 +14,37 @@ export function Contact() {
     subject: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Aquí iría la lógica para enviar el formulario
-    console.log("Form submitted:", formData);
-    alert("¡Gracias por tu mensaje! Te responderé pronto.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setSubmitError(null);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        setSubmitStatus("error");
+        setSubmitError((data.error as string) ?? "Error al enviar. Intentá de nuevo.");
+        return;
+      }
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } catch {
+      setSubmitStatus("error");
+      setSubmitError("Error de conexión. Intentá de nuevo.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -140,12 +164,21 @@ export function Contact() {
                   />
                 </div>
 
+                {submitStatus === "success" && (
+                  <p className="text-sm text-[var(--seagrass)]">
+                    ¡Mensaje enviado! Te responderé pronto.
+                  </p>
+                )}
+                {submitStatus === "error" && submitError && (
+                  <p className="text-sm text-red-500">{submitError}</p>
+                )}
                 <Button
                   type="submit"
                   size="lg"
+                  disabled={isSubmitting}
                   className="w-full bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white"
                 >
-                  Enviar Mensaje
+                  {isSubmitting ? "Enviando…" : "Enviar Mensaje"}
                 </Button>
               </form>
             </Card>
