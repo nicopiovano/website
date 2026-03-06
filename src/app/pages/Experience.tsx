@@ -108,9 +108,9 @@ export function Experience() {
                 Frontend
               </h3>
               <div className="space-y-2 text-muted-foreground">
-                <p>React / Vue.js / Angular</p>
-                <p>TypeScript / JavaScript</p>
-                <p>Tailwind CSS / Motion</p>
+                <p>React / Vue.js / Astro</p>
+                <p>JavaScript</p>
+                <p>Tailwind CSS / Quasar</p>
               </div>
             </Card>
             <Card className="p-6">
@@ -129,8 +129,8 @@ export function Experience() {
               </h3>
               <div className="space-y-2 text-muted-foreground">
                 <p>Docker</p>
-                <p>Git / Vite</p>
-                <p>Astro</p>
+                <p>Git</p>
+                <p>Vite</p>
               </div>
             </Card>
           </div>
