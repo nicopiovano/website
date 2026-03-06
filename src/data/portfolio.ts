@@ -83,7 +83,7 @@ export const PROJECTS = [
       "Cero sobreventa, control preciso del stock en tiempo real y un flujo de compra claro que maximiza la conversión.",
     image: "/projects/rifas.png",
     technologies: ["React", "Motion", "Tailwind CSS"],
-    link: "https://nico-piovano-rifas.vercel.app",
+    link: "https://nicolas-piovano-rifas.vercel.app",
     github: "https://github.com/nicopiovano/rifas-react",
   },
   {
@@ -111,7 +111,7 @@ export const PROJECTS = [
       "Marca profesional sólida, mayor captación de leads en distintos mercados y mejor conversión con clientes que operan en USD.",
     image: "/projects/porfolio.png",
     technologies: ["Astro", "Vite", "Tailwind CSS"],
-    link: "https://nico-piovano-porfolio.vercel.app",
+    link: "https://nicolas-piovano-porfolio.vercel.app",
     github: "https://github.com/nicopiovano/porfolio",
   },
   {
@@ -125,7 +125,7 @@ export const PROJECTS = [
       "Decisiones más rápidas y defendibles, alineación temprana del equipo y un criterio técnico reutilizable para proyectos futuros.",
     image: "/projects/tech-decision.png",
     technologies: ["Vue", "Vite", "Tailwind CSS"],
-    link: "https://nico-piovano-tech-decision.vercel.app",
+    link: "https://nicolas-piovano-tech-decision.vercel.app",
     github: "https://github.com/nicopiovano/tech-decision",
   },
   {
@@ -139,7 +139,7 @@ export const PROJECTS = [
       "Visibilidad inmediata del rendimiento de la cartera, decisiones más rápidas y una base lista para escalar sin rehacer lógica ni UI.",
     image: "/projects/finanzas-app.png",
     technologies: ["Vue", "Vite", "Tailwind CSS"],
-    link: "https://nico-piovano-finanzas-app.vercel.app",
+    link: "https://nicolas-piovano-finanzas-app.vercel.app",
     github: "https://github.com/nicopiovano/finanzas-app",
   },
 ] as const;

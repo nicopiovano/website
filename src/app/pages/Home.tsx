@@ -16,11 +16,11 @@ export function Home() {
 
   return (
     <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
+      {/* Hero Section — ocupa toda la pantalla inicial */}
+      <section className="relative overflow-hidden min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--seagrass)]/10 via-transparent to-[var(--dusty)]/10" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-16">
           <div className="flex flex-col md:flex-row md:items-start gap-8 max-w-4xl">
             <div className="flex-shrink-0">
               {/* <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[var(--accent-blue)]/30 shadow-lg">
