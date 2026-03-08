@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Briefcase, Sparkles } from "lucide-react";
+import { ArrowRight, Briefcase, ChevronDown, Sparkles } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "../components/ui/button";
 import { SITE, HERO, SERVICES, FINAL_CTA } from "../../data/portfolio";
@@ -20,7 +20,7 @@ export function Home() {
       <section className="relative overflow-hidden min-h-[calc(100vh-4rem)] flex flex-col justify-center">
         <div className="absolute inset-0 bg-gradient-to-br from-[var(--seagrass)]/10 via-transparent to-[var(--dusty)]/10" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 md:py-16">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex flex-col justify-start md:justify-center min-h-[calc(100vh-4rem)] pt-12 pb-6 md:py-12 lg:py-16">
           <div className="flex flex-col md:flex-row md:items-start gap-8 max-w-4xl">
             <div className="flex-shrink-0">
               {/* <div className="w-20 h-20 rounded-full overflow-hidden border-2 border-[var(--accent-blue)]/30 shadow-lg">
@@ -92,6 +92,12 @@ export function Home() {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Indicador de scroll — solo mobile */}
+        <div className="md:hidden absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-muted-foreground animate-bounce">
+          <span className="text-xs font-medium">Desliza para ver más</span>
+          <ChevronDown className="w-6 h-6" aria-hidden />
         </div>
       </section>
 

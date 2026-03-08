@@ -8,8 +8,8 @@ export function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <footer className="pointer-events-none py-4">
-        <div className="fixed bottom-4 left-1/2 -translate-x-1/2 flex justify-center">
+      <footer className="pointer-events-none py-6 mt-auto hidden md:block">
+        <div className="flex justify-center">
           <span className="pointer-events-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-card border border-border text-sm text-muted-foreground shadow-lg">
             Desarrollado con React · Tailwind CSS · AI
           </span>
