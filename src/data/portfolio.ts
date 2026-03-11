@@ -149,7 +149,7 @@ export const PROJECTS = [
       "Visibilidad inmediata del rendimiento de la cartera, decisiones más rápidas y una base lista para escalar sin rehacer lógica ni UI.",
     image: "/projects/finanzas-app.png",
     technologies: ["Vue", "Vite", "Tailwind CSS"],
-    link: "https://nicolas-piovano-finanzas-app.vercel.app",
+    link: "https://nicolas-piovano-finanzas-app.vercel.app/?demo",
     github: "https://github.com/nicopiovano/finanzas-app",
   },
   {
