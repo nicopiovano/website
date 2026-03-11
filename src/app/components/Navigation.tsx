@@ -1,13 +1,22 @@
 import { Link, useLocation } from "react-router";
-import { Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "./ui/utils";
-import { NAV_LINKS } from "@/data/portfolio";
+import { FINAL_CTA, NAV_LINKS } from "@/data/portfolio";
 
 export function Navigation() {
   const location = useLocation();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [glowing, setGlowing] = useState(false);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setGlowing(true);
+      setTimeout(() => setGlowing(false), 600);
+    }, 1800);
+    return () => clearInterval(id);
+  }, []);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 48);
@@ -73,9 +82,15 @@ export function Navigation() {
             >
               Curriculum
             </a>
+
             <Link
               to="/contacto"
-              className="ml-2 px-5 py-2.5 rounded-xl bg-[var(--accent-blue)] text-white text-sm font-semibold hover:bg-[var(--accent-blue)]/90 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--accent-blue)] focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className={cn(
+                "ml-2 inline-flex items-center px-4 py-2.5 rounded-lg text-sm font-medium text-white bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 transition-all duration-700",
+                glowing
+                  ? "scale-105 drop-shadow-[0_0_20px_rgba(59,130,246,0.6)]"
+                  : "scale-100 drop-shadow-[0_0_6px_rgba(59,130,246,0.2)]",
+              )}
             >
               Contactar
             </Link>

@@ -58,12 +58,13 @@ export function About() {
         <div className="grid grid-cols-2 md:grid-cols-3 gap-6 mb-24">
           {ABOUT.stats.map((stat, index) => (
             <Card key={index} className="p-6 text-center border-border">
-              <div className="text-4xl mb-2" style={{ fontWeight: 700, color: "var(--accent-blue)" }}>
+              <div
+                className="text-4xl mb-2"
+                style={{ fontWeight: 700, color: "var(--accent-blue)" }}
+              >
                 {stat.number}
               </div>
-              <div className="text-sm text-muted-foreground">
-                {stat.label}
-              </div>
+              <div className="text-sm text-muted-foreground">{stat.label}</div>
             </Card>
           ))}
         </div>
@@ -77,7 +78,10 @@ export function About() {
             {values.map((value, index) => {
               const Icon = VALUE_ICONS[index] ?? Code2;
               return (
-                <Card key={index} className="p-6 border-border hover:border-[var(--accent-blue)]/50 transition-all">
+                <Card
+                  key={index}
+                  className="p-6 border-border hover:border-[var(--accent-blue)]/50 transition-all"
+                >
                   <div className="flex items-start gap-4">
                     <div className="w-12 h-12 rounded-xl bg-[var(--accent-blue)]/10 flex items-center justify-center flex-shrink-0">
                       <Icon className="w-6 h-6 text-[var(--accent-blue)]" />

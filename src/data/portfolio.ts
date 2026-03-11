@@ -20,12 +20,11 @@ export const NAV_LINKS = [
   { path: "/portfolio", label: "Proyectos" },
   { path: "/experiencia", label: "Experiencia" },
   { path: "/sobre-mi", label: "Sobre mí" },
-  { path: "/contacto", label: "Contacto" },
 ] as const;
 
 export const HERO = {
-  headline1: "Tenés un proyecto.",
-  headline2: "Yo lo convierto en producto.",
+  headline1: "Tenés una idea.",
+  headline2: "Yo la transformo en algo real.",
   subheadline: "Disponible para nuevos proyectos",
   ctaPrimary: "Ver proyectos",
   ctaPrimaryHref: "/portfolio",
@@ -164,7 +163,7 @@ export const PROJECTS = [
       "Marca profesional sólida, mayor captación de leads en distintos mercados y mejor conversión con clientes que operan en USD.",
     image: "/projects/website.png",
     technologies: ["Vue", "Vite", "Tailwind CSS"],
-    link: "https://nicol-piovano-porfolio.vercel.app",
+    link: "https://nico-piovano-porfolio.vercel.app",
     github: "https://github.com/nicopiovano/porfolio",
   },
 ] as const;
@@ -212,32 +211,31 @@ export const EXPERIENCE = [
 export const ABOUT = {
   title: "Sobre mí",
   intro: [
-    "Soy Nico. Trabajo con founders y equipos que necesitan un producto web que venda y que se pueda escalar.",
-    "Me muevo rápido sin sacrificar calidad: defino alcance, priorizo impacto, entrego en iteraciones cortas y dejo todo mantenible. Comunicación clara, expectativas por escrito y foco en resultados.",
+    "Soy Nico. Trabajo con founders y equipos que necesitan un producto web funcional, escalable y que se pueda mantener.",
+    "Defino alcance, priorizo orden y objetivos, y entrego en iteraciones cortas.",
   ],
   paragraphs: [
     {
-      before: "Programo desde 2016, ",
-      strong: "resolviendo problemas concretos y aprendiendo en el camino.",
-      after: "",
+      before: "Programo desde 2016. ",
+      strong: "Full-stack con foco en producto:",
+      after: " me involucro desde la idea hasta el que esté todo funcionando.",
     },
     {
       before:
-        "Me adapto rápidamente a nuevas tecnologías y proyectos, y siempre busco ",
-      strong: "soluciones prácticas",
+        "Viví y trabajé en varios países de Latinoamérica, lo que me dio ",
+      strong: "adaptabilidad real",
+      after: " para trabajar con equipos y contextos muy distintos.",
+    },
+    {
+      before: "Me muevo bien tanto ",
+      strong: "trabajando solo como siendo parte de un equipo.",
       after:
-        " que permitan avanzar de manera efectiva, incluso en entornos complicados.",
+        " Me comunico con claridad, dejo expectativas por escrito y entrego código mantenible.",
     },
     {
-      before:
-        "Viajé y viví en varios países de Latinoamérica mientras trabajaba en hostels, lo que fortaleció mi ",
-      strong: "trato con personas, la adaptabilidad y el trabajo en equipo",
-      after: " con perfiles muy diversos.",
-    },
-    {
-      before: "Mis objetivos son mejorar en el ",
-      strong: "desarrollo freelance",
-      after: " y aportar resultados claros en cada proyecto.",
+      before: "Hoy busco proyectos donde pueda ",
+      strong: "construir algo que importe",
+      after: ", ya sea como freelance o sumándome a un equipo.",
     },
   ],
   values: [
@@ -272,8 +270,11 @@ export const ABOUT = {
 export const FINAL_CTA = {
   title: "¿Querés lanzar o mejorar tu producto este mes?",
   text: "Contame qué querés lanzar, para quién y tu timeline; te respondo con propuesta + estimación en 24h.",
-  primaryLabel: "Contactar por LinkedIn",
-  primaryHref: "https://linkedin.com/in/nmpiovano",
+  primaryLabel: ["LinkedIn", "WhatsApp"],
+  primaryHref: [
+    "https://linkedin.com/in/nmpiovano",
+    "https://wa.me/5491170592784?text=Hola%20Nico%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20con%20vos.",
+  ],
   hint: "Trabajo en USD con clientes internacionales y nacionales.",
 } as const;
 

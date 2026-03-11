@@ -32,8 +32,8 @@ export function Experience() {
 
                 <Card className="p-6 md:p-8 border-border hover:border-[var(--accent-blue)]/50 transition-all">
                   {/* Header */}
-                  <div className="mb-6">
-                    <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
+                  <div>
+                    <div className="flex flex-wrap items-start justify-between gap-4 mb-1">
                       <div>
                         <h3
                           className="text-2xl mb-2"
@@ -59,14 +59,14 @@ export function Experience() {
                   </div>
 
                   {/* Description */}
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
+                  <p className="text-muted-foreground mb-2 md:mb-2 leading-relaxed text-sm md:text-base">
                     {exp.description}
                   </p>
 
                   {/* Learnings */}
                   {exp.learnings && (
-                    <div className="mb-6">
-                      <h4 className="text-sm mb-2" style={{ fontWeight: 600 }}>
+                    <div className="mb-3">
+                      <h4 className="text-sm mb-1" style={{ fontWeight: 600 }}>
                         Aprendizajes:
                       </h4>
                       <p className="text-muted-foreground text-sm">
@@ -113,7 +113,7 @@ export function Experience() {
                 <p>Tailwind CSS / Quasar</p>
               </div>
             </Card>
-            <Card className="p-6">
+            <Card className="p-4 md:p-5">
               <h3 className="text-lg mb-4" style={{ fontWeight: 600 }}>
                 Backend
               </h3>
@@ -123,14 +123,15 @@ export function Experience() {
                 <p>REST APIs</p>
               </div>
             </Card>
-            <Card className="p-6">
+            <Card className="p-4 md:p-5">
               <h3 className="text-lg mb-4" style={{ fontWeight: 600 }}>
                 DevOps & Tools
               </h3>
               <div className="space-y-2 text-muted-foreground">
                 <p>Docker</p>
-                <p>Git</p>
+                <p>GitHub Actions</p>
                 <p>Vite</p>
+                <p>Railway / Supabase</p>
               </div>
             </Card>
           </div>

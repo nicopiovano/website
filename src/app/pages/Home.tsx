@@ -1,18 +1,38 @@
 import { useState, useEffect } from "react";
-import { ArrowRight, Briefcase, ChevronDown, Sparkles } from "lucide-react";
+import { ArrowRight, Briefcase, ChevronDown } from "lucide-react";
 import { Link } from "react-router";
 import { Button } from "../components/ui/button";
 import { SITE, HERO, SERVICES, FINAL_CTA } from "../../data/portfolio";
-import { ImageWithFallback } from "../components/figma/ImageWithFallback";
 
 export function Home() {
+  const [displayed, setDisplayed] = useState("");
   const [headlineIndex, setHeadlineIndex] = useState(0);
   const headlines = [HERO.headline1, HERO.headline2];
 
+  //   useEffect(() => {
+  //     const id = setInterval(() => setHeadlineIndex((i) => (i + 1) % 2), 1700);
+  //     return () => clearInterval(id);
+  //   }, []);
+
   useEffect(() => {
-    const id = setInterval(() => setHeadlineIndex((i) => (i + 1) % 2), 1700);
-    return () => clearInterval(id);
-  }, []);
+    const text = headlines[headlineIndex];
+    let i = 0;
+    setDisplayed("");
+
+    const typing = setInterval(() => {
+      setDisplayed(text.slice(0, i + 1));
+      i++;
+      if (i >= text.length) {
+        clearInterval(typing);
+        // Esperar 3 segundos y pasar a la siguiente
+        setTimeout(() => {
+          setHeadlineIndex((prev) => (prev + 1) % headlines.length);
+        }, 1700);
+      }
+    }, 35); // velocidad de tipeo en ms
+
+    return () => clearInterval(typing);
+  }, [headlineIndex]);
 
   return (
     <div className="min-h-screen pt-16">
@@ -53,7 +73,7 @@ export function Home() {
               </h1>
 
               <div className="relative min-h-[3.5rem] md:min-h-[4rem] mb-8">
-                {headlines.map((text, i) => (
+                {/* {headlines.map((text, i) => (
                   <h2
                     key={i}
                     className={`absolute inset-0 text-2xl md:text-3xl text-muted-foreground transition-all duration-700 ${
@@ -64,7 +84,12 @@ export function Home() {
                   >
                     {text}
                   </h2>
-                ))}
+                ))} */}
+                <h2>
+                  <span className="text-2xl md:text-3xl text-muted-foreground">
+                    {displayed}
+                  </span>
+                </h2>
               </div>
               <div className="flex flex-wrap gap-4">
                 <Link to={HERO.ctaPrimaryHref}>
@@ -141,7 +166,6 @@ export function Home() {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-3xl bg-gradient-to-r from-[var(--dusk)]/15 to-[var(--dusty)]/15 border border-border p-12 md:p-16 text-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-[var(--seagrass)]/5 to-transparent" />
             <div className="relative">
               <h2
                 className="text-3xl md:text-4xl mb-6"
@@ -155,19 +179,22 @@ export function Home() {
               <p className="text-sm text-muted-foreground mb-8">
                 {FINAL_CTA.hint}
               </p>
-              <a
-                href={FINAL_CTA.primaryHref}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <Button
-                  size="lg"
-                  className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white"
+
+              {/* Botón con glow pulsante */}
+              {FINAL_CTA.primaryHref.map((href, index) => (
+                <div
+                  className={`inline-block ml-4 transition-all duration-700`}
                 >
-                  {FINAL_CTA.primaryLabel}
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </a>
+                  <a href={href} target="_blank" rel="noopener noreferrer">
+                    <Button
+                      size="lg"
+                      className={`bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white transition-all duration-700 scale-100`}
+                    >
+                      Contactar por {FINAL_CTA.primaryLabel[index]}
+                    </Button>
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
         </div>

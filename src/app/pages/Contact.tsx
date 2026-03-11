@@ -1,4 +1,4 @@
-import { Mail, Linkedin, Github } from "lucide-react";
+import { Mail, Linkedin, Github, MessageCircle } from "lucide-react";
 import { Card } from "../components/ui/card";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
@@ -15,7 +15,9 @@ export function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [submitStatus, setSubmitStatus] = useState<
+    "idle" | "success" | "error"
+  >("idle");
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +36,9 @@ export function Contact() {
 
       if (!res.ok) {
         setSubmitStatus("error");
-        setSubmitError((data.error as string) ?? "Error al enviar. Intentá de nuevo.");
+        setSubmitError(
+          (data.error as string) ?? "Error al enviar. Intentá de nuevo.",
+        );
         return;
       }
       setSubmitStatus("success");
@@ -298,14 +302,21 @@ export function Contact() {
               ¿Prefieres una llamada rápida?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Agenda una videollamada de 30 minutos para discutir tu proyecto
-              sin compromiso
+              Contactame para discutir tu proyecto sin compromiso
             </p>
             <Button
               size="lg"
               className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white"
             >
-              Agendar Reunión
+              <a
+                href="https://wa.me/5491170592784?text=Hola%20Nico%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20con%20vos."
+                className="flex items-center gap-2"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle className="w-4 h-4" />
+                WhatsApp
+              </a>
             </Button>
           </Card>
         </div>
