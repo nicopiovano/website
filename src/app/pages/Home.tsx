@@ -181,20 +181,20 @@ export function Home() {
               </p>
 
               {/* Botón con glow pulsante */}
-              {FINAL_CTA.primaryHref.map((href, index) => (
-                <div
-                  className={`inline-block ml-4 transition-all duration-700`}
-                >
-                  <a href={href} target="_blank" rel="noopener noreferrer">
-                    <Button
-                      size="lg"
-                      className={`bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white transition-all duration-700 scale-100`}
-                    >
-                      Contactar por {FINAL_CTA.primaryLabel[index]}
-                    </Button>
-                  </a>
-                </div>
-              ))}
+              <div className="flex flex-wrap justify-center gap-3 sm:gap-4">
+                {FINAL_CTA.primaryHref.map((href, index) => (
+                  <div key={href} className="transition-all duration-700">
+                    <a href={href} target="_blank" rel="noopener noreferrer">
+                      <Button
+                        size="lg"
+                        className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white transition-all duration-700 scale-100"
+                      >
+                        Contactar por {FINAL_CTA.primaryLabel[index]}
+                      </Button>
+                    </a>
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
