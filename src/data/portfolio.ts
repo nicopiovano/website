@@ -23,8 +23,8 @@ export const NAV_LINKS = [
 ] as const;
 
 export const HERO = {
-  headline1: "Tenés una idea.",
-  headline2: "Yo la transformo en algo real.",
+  headline1: "Llevo tu idea al alcance de todos.",
+  // headline2: "Yo la transformo en algo real.",
   subheadline: "Disponible para nuevos proyectos",
   ctaPrimary: "Ver proyectos",
   ctaPrimaryHref: "/portfolio",

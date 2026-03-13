@@ -49,9 +49,11 @@ export function Portfolio() {
                     </span>
                   </div>
 
-                  <p className="text-muted-foreground mb-4 line-clamp-3">
-                    {project.impact}
-                  </p>
+                  <div className="relative mb-4 min-h-[4.5rem]">
+                    <p className="text-muted-foreground absolute inset-0 overflow-y-auto pr-1">
+                      {project.impact}
+                    </p>
+                  </div>
 
                   {/* Technologies */}
                   <div className="flex flex-wrap gap-2 mb-4">

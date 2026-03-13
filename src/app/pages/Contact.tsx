@@ -299,13 +299,13 @@ export function Contact() {
               className="text-2xl md:text-3xl mb-4"
               style={{ fontWeight: 700 }}
             >
-              ¿Prefieres una llamada rápida?
+              ¿Preferis una llamada rápida?
             </h2>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
               Contactame para discutir tu proyecto sin compromiso
             </p>
             <Button
-              size="lg"
+              size="sm"
               className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white"
             >
               <a

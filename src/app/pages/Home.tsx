@@ -6,33 +6,42 @@ import { SITE, HERO, SERVICES, FINAL_CTA } from "../../data/portfolio";
 
 export function Home() {
   const [displayed, setDisplayed] = useState("");
-  const [headlineIndex, setHeadlineIndex] = useState(0);
-  const headlines = [HERO.headline1, HERO.headline2];
-
-  //   useEffect(() => {
-  //     const id = setInterval(() => setHeadlineIndex((i) => (i + 1) % 2), 1700);
-  //     return () => clearInterval(id);
-  //   }, []);
-
+  const headline = HERO.headline1;
   useEffect(() => {
-    const text = headlines[headlineIndex];
-    let i = 0;
-    setDisplayed("");
+    let typingInterval: number | undefined;
+    let timeoutId: number | undefined;
 
-    const typing = setInterval(() => {
-      setDisplayed(text.slice(0, i + 1));
-      i++;
-      if (i >= text.length) {
-        clearInterval(typing);
-        // Esperar 3 segundos y pasar a la siguiente
-        setTimeout(() => {
-          setHeadlineIndex((prev) => (prev + 1) % headlines.length);
-        }, 1700);
+    const startTyping = () => {
+      const text = headline;
+      let i = 0;
+      setDisplayed("");
+
+      typingInterval = window.setInterval(() => {
+        i++;
+        setDisplayed(text.slice(0, i));
+
+        if (i >= text.length && typingInterval !== undefined) {
+          clearInterval(typingInterval);
+          typingInterval = undefined;
+
+          timeoutId = window.setTimeout(() => {
+            startTyping();
+          }, 1700);
+        }
+      }, 35);
+    };
+
+    startTyping();
+
+    return () => {
+      if (typingInterval !== undefined) {
+        clearInterval(typingInterval);
       }
-    }, 35); // velocidad de tipeo en ms
-
-    return () => clearInterval(typing);
-  }, [headlineIndex]);
+      if (timeoutId !== undefined) {
+        clearTimeout(timeoutId);
+      }
+    };
+  }, [headline]);
 
   return (
     <div className="min-h-screen pt-16">
