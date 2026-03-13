@@ -140,14 +140,14 @@ export function Navigation() {
               href="/Nicolás_Piovano_Sr_Fullstack.pdf"
               download
               onClick={() => setIsOpen(false)}
-              className="mt-2 mx-4 py-3 rounded-lg text-sm font-medium text-center text-muted-foreground hover:bg-accent"
+              className="mt-2 px-4 py-3 rounded-lg text-sm font-medium text-muted-foreground hover:bg-accent"
             >
               Curriculum
             </a>
             <Link
               to="/contacto"
               onClick={() => setIsOpen(false)}
-              className="mt-2 mx-4 py-3 rounded-xl bg-[var(--accent-blue)] text-white text-sm font-semibold text-center hover:bg-[var(--accent-blue)]/90 transition-colors"
+              className="mt-2 px-4 py-3 rounded-xl bg-[var(--accent-blue)] text-white text-sm font-semibold hover:bg-[var(--accent-blue)]/90 transition-colors"
             >
               Contactar
             </Link>
