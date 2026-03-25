@@ -307,6 +307,7 @@ export function Contact() {
             <Button
               size="sm"
               className="bg-[var(--accent-blue)] hover:bg-[var(--accent-blue)]/90 text-white"
+              asChild
             >
               <a
                 href="https://wa.me/5491170592784?text=Hola%20Nico%2C%20vi%20tu%20portfolio%20y%20me%20gustar%C3%ADa%20hablar%20con%20vos."

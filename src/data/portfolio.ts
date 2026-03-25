@@ -252,7 +252,7 @@ export const ABOUT = {
     {
       title: "Colaboración",
       description:
-        "Trabajo efectivo en equipo, comunicación clara y mentoría de desarrolladores junior.",
+        "Trabajo efectivo en equipo y comunicación clara.",
     },
     {
       title: "Resultados",
