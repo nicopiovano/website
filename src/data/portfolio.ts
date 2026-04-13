@@ -166,6 +166,20 @@ export const PROJECTS = [
     link: "https://nico-piovano-porfolio.vercel.app",
     github: "https://github.com/nicopiovano/porfolio",
   },
+  {
+    title: "Presupuesto Gratis con IA",
+    serviceIndex: 2,
+    problem:
+      "Generar presupuestos de manera rápida y eficiente, sin necesidad de tener conocimientos técnicos.",
+    solution:
+      "Hacer un simple formulario con preguntas y una IA genera un presupuesto.",
+    impact:
+      "Cualquier persona puede generar presupuestos para cualquier proyecto o idea.",
+    image: "/projects/estimacion.png",
+    technologies: ["Vue", "Vite", "Tailwind CSS"],
+    link: "https://nico-piovano-estimacion.vercel.app",
+    github: "https://github.com/nicopiovano/estimacion",
+  },
 ] as const;
 
 export const EXPERIENCE = [
@@ -251,8 +265,7 @@ export const ABOUT = {
     },
     {
       title: "Colaboración",
-      description:
-        "Trabajo efectivo en equipo y comunicación clara.",
+      description: "Trabajo efectivo en equipo y comunicación clara.",
     },
     {
       title: "Resultados",
